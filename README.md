@@ -287,18 +287,16 @@ This project is licensed under the **MIT** License - see the [LICENSE](https://g
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >=1.9.5 |
-| <a name="requirement_google"></a> [google](#requirement\_google) | >=6.1.0 |
-| <a name="requirement_null"></a> [null](#requirement\_null) | 3.2.3 |
-| <a name="requirement_random"></a> [random](#requirement\_random) | ~> 3.6.3 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >=1.9.4 |
+| <a name="requirement_google"></a> [google](#requirement\_google) | 4.84.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_google"></a> [google](#provider\_google) | >=6.1.0 |
-| <a name="provider_null"></a> [null](#provider\_null) | 3.2.3 |
-| <a name="provider_random"></a> [random](#provider\_random) | ~> 3.6.3 |
+| <a name="provider_google"></a> [google](#provider\_google) | 4.84.0 |
+| <a name="provider_null"></a> [null](#provider\_null) | n/a |
+| <a name="provider_random"></a> [random](#provider\_random) | n/a |
 
 ## Modules
 
@@ -306,22 +304,21 @@ This project is licensed under the **MIT** License - see the [LICENSE](https://g
 |------|--------|---------|
 | <a name="module_labels"></a> [labels](#module\_labels) | git::https://github.com/SyncArcs/terraform-google-labels.git | v1.0.0 |
 
-
 ## Resources
 
 | Name | Type |
 |------|------|
-| [google_project_iam_member.database_integration](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/project_iam_member) | resource |
-| [google_sql_database.additional_databases](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/sql_database) | resource |
-| [google_sql_database.default](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/sql_database) | resource |
-| [google_sql_database_instance.default](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/sql_database_instance) | resource |
-| [google_sql_user.default](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/sql_user) | resource |
-| [google_sql_user.iam_account](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/sql_user) | resource |
-| [null_resource.module_depends_on](https://registry.terraform.io/providers/hashicorp/null/3.2.3/docs/resources/resource) | resource |
+| [google_project_iam_member.database_integration](https://registry.terraform.io/providers/hashicorp/google/4.84.0/docs/resources/project_iam_member) | resource |
+| [google_sql_database.additional_databases](https://registry.terraform.io/providers/hashicorp/google/4.84.0/docs/resources/sql_database) | resource |
+| [google_sql_database.default](https://registry.terraform.io/providers/hashicorp/google/4.84.0/docs/resources/sql_database) | resource |
+| [google_sql_database_instance.default](https://registry.terraform.io/providers/hashicorp/google/4.84.0/docs/resources/sql_database_instance) | resource |
+| [google_sql_user.default](https://registry.terraform.io/providers/hashicorp/google/4.84.0/docs/resources/sql_user) | resource |
+| [google_sql_user.iam_account](https://registry.terraform.io/providers/hashicorp/google/4.84.0/docs/resources/sql_user) | resource |
+| [null_resource.module_depends_on](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) | resource |
 | [random_id.suffix](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/id) | resource |
 | [random_password.additional_passwords](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password) | resource |
 | [random_password.user_password](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password) | resource |
-| [google_client_config.current](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/client_config) | data source |
+| [google_client_config.current](https://registry.terraform.io/providers/hashicorp/google/4.84.0/docs/data-sources/client_config) | data source |
 
 ## Inputs
 
@@ -353,7 +350,6 @@ This project is licensed under the **MIT** License - see the [LICENSE](https://g
 | <a name="input_edition"></a> [edition](#input\_edition) | The edition of the instance, can be ENTERPRISE or ENTERPRISE\_PLUS. | `string` | `null` | no |
 | <a name="input_enable_default_db"></a> [enable\_default\_db](#input\_enable\_default\_db) | Enable or disable the creation of the default database | `bool` | `true` | no |
 | <a name="input_enable_default_user"></a> [enable\_default\_user](#input\_enable\_default\_user) | Enable or disable the creation of the default user | `bool` | `true` | no |
-| <a name="input_enable_google_ml_integration"></a> [enable\_google\_ml\_integration](#input\_enable\_google\_ml\_integration) | Enable database ML integration | `bool` | `false` | no |
 | <a name="input_enable_random_password_special"></a> [enable\_random\_password\_special](#input\_enable\_random\_password\_special) | Enable special characters in generated random passwords. | `bool` | `false` | no |
 | <a name="input_encryption_key_name"></a> [encryption\_key\_name](#input\_encryption\_key\_name) | The full path to the encryption key used for the CMEK disk encryption | `string` | `null` | no |
 | <a name="input_environment"></a> [environment](#input\_environment) | Environment (e.g. `prod`, `dev`, `staging`). | `string` | `""` | no |
@@ -369,7 +365,6 @@ This project is licensed under the **MIT** License - see the [LICENSE](https://g
 | <a name="input_maintenance_window_update_track"></a> [maintenance\_window\_update\_track](#input\_maintenance\_window\_update\_track) | The update track of maintenance window for the master instance maintenance.Can be either `canary` or `stable`. | `string` | `"canary"` | no |
 | <a name="input_managedby"></a> [managedby](#input\_managedby) | ManagedBy, eg 'info@SyncArcs.com'. | `string` | `"info@SyncArcs.com"` | no |
 | <a name="input_master_instance_name"></a> [master\_instance\_name](#input\_master\_instance\_name) | Name of the master instance if this is a failover replica. Required for creating failover replica instance. Not needed for master instance. When removed, next terraform apply will promote this failover replica instance as master instance | `string` | `null` | no |
-| <a name="input_module_depends_on"></a> [module\_depends\_on](#input\_module\_depends\_on) | List of modules or resources this module depends on. | `list(any)` | `[]` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name of the resource. Provided by the client when the resource is created. | `string` | `"test"` | no |
 | <a name="input_password_validation_policy_config"></a> [password\_validation\_policy\_config](#input\_password\_validation\_policy\_config) | The password validation policy settings for the database instance. | <pre>object({<br>    min_length                  = number<br>    complexity                  = string<br>    reuse_interval              = number<br>    disallow_username_substring = bool<br>    password_change_interval    = string<br>  })</pre> | `null` | no |
 | <a name="input_pricing_plan"></a> [pricing\_plan](#input\_pricing\_plan) | The pricing plan for the master instance. | `string` | `"PER_USE"` | no |

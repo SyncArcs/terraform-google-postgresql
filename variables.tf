@@ -318,11 +318,7 @@ variable "encryption_key_name" {
   description = "The full path to the encryption key used for the CMEK disk encryption"
 }
 
-variable "module_depends_on" {
-  type        = list(any)
-  default     = []
-  description = "List of modules or resources this module depends on."
-}
+
 
 variable "deletion_protection" {
   type        = bool
@@ -384,11 +380,6 @@ variable "data_cache_enabled" {
   description = "Whether data cache is enabled for the instance. Defaults to false. Feature is only available for ENTERPRISE_PLUS tier and supported database_versions"
 }
 
-variable "enable_google_ml_integration" {
-  type        = bool
-  default     = false
-  description = "Enable database ML integration"
-}
 
 variable "master_instance_name" {
   type        = string
