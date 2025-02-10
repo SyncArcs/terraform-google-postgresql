@@ -21,3 +21,4 @@ output "public_ip_address" {
   sensitive   = false
   description = "The first public (PRIMARY) IPv4 address assigned for the master instance"
 }
+
