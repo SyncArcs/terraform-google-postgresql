@@ -77,4 +77,3 @@ module "postgresql-db" {
     }
   ]
 }
-

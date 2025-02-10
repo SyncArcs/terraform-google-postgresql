@@ -8,13 +8,12 @@ terraform {
     }
     random = {
       source  = "hashicorp/random"
-      version = ">= 3.5.1"  # Use the latest stable version
+      version = ">= 3.5.1" # Use the latest stable version
     }
     null = {
       source  = "hashicorp/null"
-      version = ">= 3.2.1"  # Use the latest stable version
+      version = ">= 3.2.1" # Use the latest stable version
     }
 
   }
 }
-

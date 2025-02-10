@@ -398,3 +398,4 @@ variable "root_password" {
   default     = null
   description = "Initial root password during creation"
 }
+

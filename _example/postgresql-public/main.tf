@@ -1,5 +1,5 @@
 provider "google" {
-  project = "soy-smile-435017-c5"
+  project = "testing-gcp-ops"
   region  = "asia-northeast1"
   zone    = "asia-northeast1-a"
 }
@@ -34,4 +34,3 @@ module "postgresql-db" {
     }]
   }
 }
-
